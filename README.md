@@ -2,13 +2,16 @@
 
 > A modern data pipeline project following Extract, Transform, Load principles. Built by an aspiring cloud data engineer starting their journey.
 
+**📌 Learning Project** - This repository demonstrates fundamental ETL concepts and data engineering practices.
+
 ---
 
 ## 📋 Overview
 
-This repository implements the **Extract-Transform-Load (ETL)** architecture, a fundamental pattern in cloud data engineering. Currently featuring the **Extract** phase, with Transform and Load components coming soon.
+This repository implements the **Extract-Transform-Load (ETL)** architecture, a fundamental pattern in cloud data engineering. Currently featuring **Extract** and **Transform** phases, with Load component coming soon.
 
-**Extract Phase**: Seamlessly reads data from CSV sources with robust error handling and structured data parsing.
+- **Extract Phase**: Reads data from CSV sources with robust error handling
+- **Transform Phase**: Cleans, validates, and deduplicates data
 
 ---
 
@@ -27,7 +30,7 @@ This repository implements the **Extract-Transform-Load (ETL)** architecture, a 
 ```
 ETL-Pipeline/
 ├── Extract-Data.py          # Phase 1: Data extraction from sources
-├── Transform-Data.py        # Phase 2: Data cleaning & transformation (coming soon)
+├── Transform-Data.py        # Phase 2: Data cleaning & transformation
 ├── Load-Data.py             # Phase 3: Data loading to destinations (coming soon)
 ├── README.md
 └── requirements.txt
@@ -35,7 +38,9 @@ ETL-Pipeline/
 
 ---
 
-## 🔧 Phase 1: Extract
+## 🔧 Phases
+
+### Phase 1️⃣: Extract
 
 **File**: `Extract-Data.py`
 
@@ -45,15 +50,28 @@ The Extract phase handles data ingestion from CSV files with:
 - Error handling for missing files
 - Clean data return for downstream processing
 
+### Phase 2️⃣: Transform
+
+**File**: `Transform-Data.py`
+
+The Transform phase processes extracted data with:
+- **Data Validation**: Removes records with invalid grades (> 100)
+- **Missing Data Handling**: Filters out records with missing age values
+- **Deduplication**: Eliminates duplicate records based on (name, age, grade)
+- **Data Cleaning**: Ensures data quality before loading
+
 ### Usage Example
 ```python
-from Extract-Data import Extract
+from Transform-Data import extract, transformation
 
-# Load data from CSV
-data = Extract("data/student.csv")
+# Extract data from CSV
+data = extract("data/student.csv")
 
-# Access parsed rows
-for row in data:
+# Transform and clean the data
+clean_data = transformation(data)
+
+# Process cleaned records
+for row in clean_data:
     print(row)
 ```
 
@@ -91,14 +109,14 @@ Contributions, ideas, and feedback are welcome! Feel free to:
 ## 📝 Documentation & Credits
 
 **Code Architecture**: Designed and implemented by myself  
-**README & Documentation**: Written by Copilot
+**README & Documentation**: Enhanced by Copilot
 
 ---
 
 ## 📅 Roadmap
 
 - [x] Extract Phase (CSV parsing)
-- [ ] Transform Phase (Data cleaning & aggregation)
+- [x] Transform Phase (Data cleaning & deduplication)
 - [ ] Load Phase (Database/Cloud storage)
 - [ ] Add unit tests
 - [ ] Docker containerization
@@ -108,7 +126,7 @@ Contributions, ideas, and feedback are welcome! Feel free to:
 
 ## 💡 What's Next?
 
-Stay tuned! The Transform and Load phases are coming soon. Follow the repository to stay updated.
+The **Load phase** is coming soon! Stay tuned and follow the repository for updates.
 
 ---
 
