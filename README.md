@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Finished%20Development-brightgreen?style=flat-square)
 ![Learning](https://img.shields.io/badge/Project-Learning-yellow?style=flat-square)
 
 > A comprehensive Extract-Transform-Load (ETL) pipeline implementation demonstrating best practices in data engineering. Built as a learning project by an aspiring cloud data engineer.
